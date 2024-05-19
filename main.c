@@ -14,6 +14,7 @@ int main()
     // print();
     
     printf("%d\n", list->next->next->next->next->prev->data);
+    clear();
 
     return 0;
 }

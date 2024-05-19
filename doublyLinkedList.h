@@ -8,3 +8,4 @@ extern struct ll* list;
 
 void add(int nodeData);
 void print();
+void clear();

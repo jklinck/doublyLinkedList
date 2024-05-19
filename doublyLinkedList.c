@@ -43,3 +43,14 @@ void print(){
         temp = temp->next;
     }
 }
+
+void clear(){
+    struct ll* current = list;
+    struct ll* temp;
+
+    while(current != NULL){
+        temp = current->next;
+        free(current);
+        current = temp;
+    }
+}
