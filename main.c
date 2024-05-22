@@ -15,7 +15,7 @@ int main()
     
     print(list);
     
-    // teest to check if prev is working correctly
+    // test to check if prev is working correctly
     printf("3 = %d\n", list->next->prev->data);
     printf("5 = %d\n", list->next->next->prev->data);
     printf("7 = %d\n", list->next->next->next->prev->data);
