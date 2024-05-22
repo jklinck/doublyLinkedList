@@ -2,21 +2,20 @@
 #include <stdlib.h>
 #include "doublyLinkedList.h"
 
-struct ll* list = NULL;
-
-void add(int nodeData){
+// add a node to the list
+void add(struct ll** head, int nodeData){
     struct ll* newNode = malloc(sizeof(struct ll));
     newNode->prev = NULL;
     newNode->data = nodeData;
     newNode->next = NULL;
     
-    if(list == NULL){
-        list = newNode;
+    if(*head == NULL){
+        *head = newNode;
         return;
     }
     
-    struct ll* temp = list;        
-    struct ll* previous = list;
+    struct ll* temp = *head;        
+    struct ll* previous = *head;
     while(temp->next != NULL){
         previous = temp;
         temp = temp->next;
@@ -25,18 +24,18 @@ void add(int nodeData){
     temp->next = newNode;
     temp->next->prev = temp;
 }
-
-void print(){
-    if(list == NULL){
-        printf("The list is empty!");
+// print the list to look like an array
+void print(struct ll* head){
+    if(head == NULL){
+        printf("This list is empty!");
         return;
     }
     
-    struct ll* temp = list;
+    struct ll* temp = head;
     printf("[");
     while(temp != NULL){
         if(temp->next == NULL){
-            printf("%d]", temp->data);
+            printf("%d]\n", temp->data);
             return;
         }
         printf("%d, ", temp->data);
@@ -44,8 +43,9 @@ void print(){
     }
 }
 
-void clear(){
-    struct ll* current = list;
+// free up allocated heap memory
+void clear(struct ll** head){
+    struct ll* current = *head;
     struct ll* temp;
 
     while(current != NULL){

@@ -4,8 +4,8 @@ struct ll{
     struct ll* next;
 };
 
-extern struct ll* list;
+void add(struct ll** head, int nodeData);
 
-void add(int nodeData);
-void print();
-void clear();
+void print(struct ll* head);
+
+void clear(struct ll** head);
