@@ -6,7 +6,7 @@
 void add(struct ll** head, int nodeData){
     struct ll* newNode = malloc(sizeof(struct ll));
     if(newNode == NULL){
-        printf("Memory allocation for newNode inside of add function failed!");
+        printf("Memory allocation for newNode inside of add function failed!\n");
         return;
     }
     newNode->prev = NULL;
@@ -32,7 +32,7 @@ void add(struct ll** head, int nodeData){
 // print the list to look like an array
 void print(struct ll* head){
     if(head == NULL){
-        printf("This list is empty!");
+        printf("This list is empty!\n");
         return;
     }
     
@@ -58,10 +58,15 @@ void clear(struct ll** head){
         free(current);
         current = temp;
     }
+    *head = NULL;
 }
 
 // remove a node
 void removeNode(struct ll** head, int nodeData){
+    if(*head == NULL){
+        printf("The list is empty, so you cannot remove that node.\n");
+        return;
+    }
     struct ll* current = *head;
 
     if((*head)->data == nodeData){
@@ -71,10 +76,10 @@ void removeNode(struct ll** head, int nodeData){
         return;
     }
 
-    while(current->data != nodeData){    //     3,5,7,9,11
+    while(current->data != nodeData){    
         current = current->next;
         if(current == NULL){
-            printf("That node does not exist in this list.");
+            printf("That node does not exist in this list.\n");
             return;
         }
     }
