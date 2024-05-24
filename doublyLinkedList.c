@@ -5,6 +5,10 @@
 // add a node to the list
 void add(struct ll** head, int nodeData){
     struct ll* newNode = malloc(sizeof(struct ll));
+    if(newNode == NULL){
+        printf("Memory allocation for newNode inside of add function failed!");
+        return;
+    }
     newNode->prev = NULL;
     newNode->data = nodeData;
     newNode->next = NULL;
