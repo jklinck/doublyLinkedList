@@ -9,3 +9,5 @@ void add(struct ll** head, int nodeData);
 void print(struct ll* head);
 
 void clear(struct ll** head);
+
+void removeNode(struct ll** head, int nodeData);

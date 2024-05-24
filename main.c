@@ -14,13 +14,9 @@ int main()
     add(&list, 13);
     
     print(list);
-    
-    // test to check if prev is working correctly
-    printf("3 = %d\n", list->next->prev->data);
-    printf("5 = %d\n", list->next->next->prev->data);
-    printf("7 = %d\n", list->next->next->next->prev->data);
-    printf("9 = %d\n", list->next->next->next->next->prev->data);
-    printf("11 = %d\n", list->next->next->next->next->next->prev->data);
+
+    removeNode(&list, 7);
+    print(list);
     
     // free up allocated heap memory
     clear(&list);
