@@ -66,17 +66,23 @@ void removeNode(struct ll** head, int nodeData){
 
     if((*head)->data == nodeData){
         (*head)->next->prev = NULL;
-        (*head) = (*head)->next;
+        *head = (*head)->next;
         free(current);
         return;
     }
 
-    while(current->data != nodeData){
+    while(current->data != nodeData){    //     3,5,7,9,11
         current = current->next;
-        if(current->next == NULL){
+        if(current == NULL){
             printf("That node does not exist in this list.");
             return;
         }
+    }
+
+    if(current->next == NULL){
+        current->prev->next = NULL;
+        free(current);
+        return;
     }
 
     current->next->prev = current->prev;

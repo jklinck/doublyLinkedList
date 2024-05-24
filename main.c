@@ -15,7 +15,7 @@ int main()
     
     print(list);
 
-    removeNode(&list, 7);
+    removeNode(&list, 13);
     print(list);
     
     // free up allocated heap memory
