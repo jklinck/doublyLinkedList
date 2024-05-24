@@ -7,15 +7,15 @@ int main()
 {
     struct ll* list = NULL;
     add(&list, 3);
-    add(&list, 5);
-    add(&list, 7);
-    add(&list, 9);
-    add(&list, 11);
-    add(&list, 13);
+    // add(&list, 5);
+    // add(&list, 7);
+    // add(&list, 9);
+    // add(&list, 11);
+    // add(&list, 13);
     
     print(list);
 
-    removeNode(&list, 13);
+    removeNode(&list, 3);
     print(list);
     
     // free up allocated heap memory

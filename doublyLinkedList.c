@@ -74,6 +74,12 @@ void removeNode(struct ll** head, int nodeData){
 
     // removes head, head->next becomes new head
     if((*head)->data == nodeData){
+        // removing nodeData in a single node list
+        if((*head)->next == NULL){
+            free(*head);
+            *head = NULL;
+            return;
+        }
         (*head)->next->prev = NULL;
         *head = (*head)->next;
         free(current);
