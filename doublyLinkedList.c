@@ -32,7 +32,7 @@ void add(struct ll** head, int nodeData){
 // print the list to look like an array
 void print(struct ll* head){
     if(head == NULL){
-        printf("This list is empty!\n");
+        printf("The list is empty\n");
         return;
     }
     
@@ -108,6 +108,8 @@ void removeNode(struct ll** head, int nodeData){
     current->prev->next = current->next;
     free(current);
 }
+
+
 
 
 
